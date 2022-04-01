@@ -31,7 +31,7 @@ const kittenData_2 = {
 const kittenData_3 = {
     image: "https://images.emedicinehealth.com/images/article/main_image/cat-scratch-disease.jpg",
     name: "Cielo",
-    desc: "Ruiseño, juguetón, le guta estar tranquilo y que nadie le moleste. Es una maravilla acariciarle!",
+    desc: "Risueño, juguetón, le guta estar tranquilo y que nadie le moleste. Es una maravilla acariciarle!",
     race: "British Shorthair",
 };
 
@@ -103,7 +103,7 @@ function cancelNewKitten(event) {
 }
 
 //Filtrar por descripción
-function filterKitten(event) {
+/*function filterKitten(event) {
     event.preventDefault();
     const descrSearchText = input_search_desc.value;
     listElement.innerHTML = "";
@@ -112,7 +112,19 @@ function filterKitten(event) {
             listElement.innerHTML += renderKitten(kittenItem);
         }
     }
-}
+}*/
+function filterKitten(ev) {ev.preventDefault()
+    
+    const kittenDataDesc = kittenDataList
+    .filter((descriptionKitten)=>descriptionKitten.desc.toLowerCase().includes (input_search_desc.value.toLowerCase() ))
+    renderKittenList(kittenDataDesc)
+    
+
+
+    //Modifica el código:
+    //Haz un filter sobre el listado de gatitos
+    //Vuelve a pintar el listado de gatitos filtrados en el HTML.
+  }
 
 //Mostrar el litado de gatitos en ell HTML
 renderKittenList(kittenDataList);
