@@ -43,7 +43,7 @@ function renderKitten(kittenData) {
     <article>
       <img
         class="card_img"
-        src=${kittenData.image}
+        src=${kittenData.url}
         alt="gatito"
       />
       <h3 class="card_title">${kittenData.name}</h3>
@@ -115,7 +115,6 @@ function cancelNewKitten(event) {
 }*/
 function filterKitten(ev) {
   ev.preventDefault();
-
   const kittenDataDesc = kittenDataList.filter((descriptionKitten) =>
     descriptionKitten.desc
       .toLowerCase()
